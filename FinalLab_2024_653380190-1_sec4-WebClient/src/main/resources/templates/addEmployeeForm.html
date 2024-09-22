@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add Employee</h1>
+
+    <form th:action="@{/web/employees/form}" th:object="${employee}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required/>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" th:field="*{salary}" required/>
+
+        <label for="department">Department:</label>
+        <select id="department" th:field="*{department.id}" required>
+            <option value="">Select Department</option>
+            <option th:each="department : ${departments}" 
+                    th:value="${department.id}" 
+                    th:text="${department.name}"></option>
+        </select>
+
+        <div class="button-container">
+            <a th:href="@{/web/employees}" class="button">Back</a>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

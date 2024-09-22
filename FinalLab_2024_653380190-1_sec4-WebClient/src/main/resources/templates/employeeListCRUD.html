@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Show Employee List</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>List of Employees</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.salary}"></td>
+                <td th:text="${employee.department.name}"></td>
+                <td class="action-buttons">
+                    <a th:href="@{/web/employees/view/{id}(id=${employee.id})}" class="button">View</a>
+                    <a th:href="@{/web/employees/edit/{id}(id=${employee.id})}" class="button">Edit</a>
+                    <a th:href="@{/web/employees/delete/{id}(id=${employee.id})}" class="button">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="button-container">
+       	<a th:href="@{/}" class="button">Back</a>
+        <a th:href="@{/web/employees/form}" class="button add-button">Add</a>
+    </div>
+</body>
+
+</html>

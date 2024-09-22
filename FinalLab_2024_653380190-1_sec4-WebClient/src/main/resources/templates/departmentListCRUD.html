@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Show Department List</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>List of Departments</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="department : ${departments}">
+                <td th:text="${department.id}"></td>
+                <td th:text="${department.name}"></td>
+                <td class="action-buttons">
+                    <a th:href="@{/web/departments/{id}(id=${department.id})}" class="button">View</a>
+                    <a th:href="@{/web/departments/edit/{id}(id=${department.id})}" class="button">Edit</a>
+                    <a th:href="@{/web/departments/delete/{id}(id=${department.id})}" class="button">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <a th:href="@{/}" class="button">Back</a>
+        <a th:href="@{/web/departments/form}" class="button add-button">Add</a>
+    </div>
+
+</body>
+
+</html>
