@@ -7,23 +7,30 @@
     <title>Department Information</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #141414, #e74c3c);
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: #ecf0f1;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            height: 100vh; /* ใช้เพื่อให้เต็มความสูงของหน้าจอ */
+            overflow: hidden; /* ป้องกันการเลื่อน */
         }
 
         h1 {
-            color: #333;
+            color: #e74c3c;
             margin-bottom: 20px;
+            font-size: 3em;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
         p {
-            font-size: 18px;
-            color: #555;
+            font-size: 20px;
+            color: #ecf0f1;
             margin-bottom: 10px;
         }
 
@@ -36,6 +43,9 @@
             border-collapse: collapse;
             margin-top: 20px;
             margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
         }
 
         table, th, td {
@@ -48,25 +58,35 @@
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #e74c3c;
             color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #34495e;
+        }
+
+        tr:hover {
+            background-color: #5d6d7e;
+            transition: background-color 0.3s ease;
         }
 
         a.button {
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #2980b9;
             color: white;
             border-radius: 5px;
             margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         a.button:hover {
-            background-color: #0056b3;
+            background-color: #1a5276;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -98,3 +118,4 @@
 </body>
 
 </html>
+	

@@ -7,32 +7,40 @@
     <title>Add Employee</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #141414, #e74c3c);
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: #ecf0f1;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            height: 100vh; /* ใช้เพื่อให้เต็มความสูงของหน้าจอ */
+            overflow: hidden; /* ป้องกันการเลื่อน */
         }
 
         h1 {
-            color: #333;
+            color: #e74c3c;
             margin-bottom: 20px;
+            font-size: 3em;
+            text-align: center;
+            letter-spacing: 1px;
         }
 
         form {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังโปร่งแสง */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
+            background-color: #34495e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 90%; /* ความกว้างของฟอร์ม */
+            max-width: 700px; /* ความกว้างสูงสุด */
         }
 
         label {
-            font-size: 18px;
-            color: #555;
+            font-size: 20px;
+            color: #ecf0f1;
             display: block;
             margin-bottom: 10px;
         }
@@ -40,32 +48,34 @@
         input[type="text"],
         input[type="number"],
         select {
-            width: 100%;
+            width: 99%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
+            color: #ecf0f1;
+            background-color: #34495e;
         }
 
         .button-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #e74c3c; /* สีแดงเหมือน Iron Man */
             color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #c0392b; /* สีแดงเข้มเมื่อ hover */
         }
 
         a.button {

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #141414, #e74c3c);
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,25 +17,36 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            color: #ecf0f1;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
         }
 
         h1 {
-            color: #333;
             margin-bottom: 20px;
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
         }
 
         a {
             text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
+            background-color: #c0392b;
+            color: #ffffff;
+            padding: 15px 30px;
             border-radius: 5px;
             margin: 10px;
             display: inline-block;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            font-size: 1.2em;
+            border: 2px solid #ffffff;
         }
 
         a:hover {
-            background-color: #0056b3;
+            background-color: #a93226;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
         }
 
         a:focus {
